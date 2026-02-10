@@ -4,237 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Terracloud | Education & Technology Consulting Africa</title>
-    <meta name="title" content="Terracloud | Education & Technology Consulting Africa">
-    <meta name="description" content="Terracloud is a premier Education and Technology Consulting provider in Africa. We bridge the gap between innovation and learning.">
-    <meta name="keywords" content="Terracloud, Terrac Africa, Tech Consulting South Africa, Education Technology, EdTech Africa, Cloud Solutions">
-    <meta name="author" content="Terracloud">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.terrac.co.za/">
-    <meta property="og:title" content="Terracloud | Education & Technology Consulting">
-    <meta property="og:description" content="Empowering African institutions through world-class technology consulting and educational frameworks.">
-    <meta property="og:image" content="https://www.terrac.co.za/assets/og-image.jpg">
+    <title>Terracloud | Education & Tech Consulting</title>
+    <meta name="description" content="Terracloud provides world-class Education and Technology Consulting across Africa.">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/48/cloud.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
-        .gradient-text {
-            background: linear-gradient(90deg, #2563eb, #7c3aed);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero-pattern {
-            background-color: #f8fafc;
-            background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px), radial-gradient(#cbd5e1 0.5px, #f8fafc 0.5px);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .lottie-container { max-width: 500px; width: 100%; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 overflow-x-hidden" x-data="{ mobileMenu: false, chatOpen: false }">
+<body class="bg-white text-slate-900" x-data="{ mobileMenu: false }">
 
-    <nav class="fixed w-full z-50 glass border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="text-2xl font-extrabold tracking-tight text-blue-600">TERRA<span class="text-slate-800">CLOUD</span></span>
-                </div>
-                
-                <div class="hidden md:flex space-x-8 font-medium">
-                    <a href="#home" class="hover:text-blue-600 transition">Home</a>
-                    <a href="#services" class="hover:text-blue-600 transition">Services</a>
-                    <a href="#about" class="hover:text-blue-600 transition">About</a>
-                    <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
-                </div>
-
-                <div class="hidden md:block">
-                    <a href="#contact" class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-200">Get Started</a>
-                </div>
-
-                <div class="md:hidden">
-                    <button @click="mobileMenu = !mobileMenu" class="text-slate-600 hover:text-blue-600">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-blue-600 tracking-tighter">
+                TERRA<span class="text-slate-900">CLOUD</span>
             </div>
+            
+            <div class="hidden md:flex space-x-8 font-semibold text-slate-600">
+                <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            </div>
+
+            <div class="hidden md:block">
+                <a href="https://wa.me/27825377627" class="bg-blue-600 text-white px-6 py-3 rounded-2xl font-bold hover:shadow-xl transition-all">Start Project</a>
+            </div>
+
+            <button @click="mobileMenu = !mobileMenu" class="md:hidden text-2xl">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
         </div>
 
-        <div x-show="mobileMenu" x-transition class="md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2">
-            <a href="#home" @click="mobileMenu = false" class="block py-2 text-lg">Home</a>
-            <a href="#services" @click="mobileMenu = false" class="block py-2 text-lg">Services</a>
-            <a href="#about" @click="mobileMenu = false" class="block py-2 text-lg">About</a>
-            <a href="#contact" @click="mobileMenu = false" class="block py-2 text-lg">Contact</a>
+        <div x-show="mobileMenu" class="md:hidden bg-white p-6 border-b">
+            <a href="#home" @click="mobileMenu = false" class="block py-3 border-b">Home</a>
+            <a href="#services" @click="mobileMenu = false" class="block py-3 border-b">Services</a>
+            <a href="#contact" @click="mobileMenu = false" class="block py-3">Contact</a>
         </div>
     </nav>
 
-    <section id="home" class="hero-pattern pt-32 pb-20 md:pt-48 md:pb-32">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight" data-aos="fade-up">
-                Empowering Africa Through <br>
-                <span class="gradient-text">Education & Tech</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
-                Terracloud is a leading Technology Consulting provider dedicated to modernizing educational frameworks and digital infrastructure across the continent.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="#services" class="bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition transform hover:-translate-y-1">Our Solutions</a>
-                <a href="mailto:info@terrac.co.za" class="bg-white border-2 border-slate-200 px-8 py-4 rounded-xl font-bold hover:border-blue-500 transition transform hover:-translate-y-1">Email Us</a>
+    <section id="home" class="pt-32 pb-16 px-6 lg:pt-48 bg-gradient-to-b from-blue-50 to-white">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <span class="bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest">Consulting Excellence</span>
+                <h1 class="text-5xl lg:text-7xl font-extrabold mt-6 leading-[1.1]">
+                    The Future of <span class="text-blue-600">African EdTech</span>
+                </h1>
+                <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+                    Bridging the digital divide with expert technology consulting and educational infrastructure tailored for the modern era.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#contact" class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold text-lg">Work With Us</a>
+                    <a href="mailto:info@terrac.co.za" class="bg-white border border-slate-200 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50">Email Support</a>
+                </div>
+            </div>
+            
+            <div class="lg:w-1/2 flex justify-center">
+                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_m6cuL6.json" 
+                    background="transparent" speed="1" class="lottie-container" loop autoplay>
+                </lottie-player>
             </div>
         </div>
     </section>
 
-    <section class="py-12 bg-blue-600">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-                <div data-aos="zoom-in">
-                    <div class="text-4xl font-bold mb-2">150+</div>
-                    <div class="text-blue-100">Projects Delivered</div>
-                </div>
-                <div data-aos="zoom-in" data-aos-delay="100">
-                    <div class="text-4xl font-bold mb-2">50+</div>
-                    <div class="text-blue-100">Institutions Helped</div>
-                </div>
-                <div data-aos="zoom-in" data-aos-delay="200">
-                    <div class="text-4xl font-bold mb-2">24/7</div>
-                    <div class="text-blue-100">Expert Support</div>
-                </div>
-                <div data-aos="zoom-in" data-aos-delay="300">
-                    <div class="text-4xl font-bold mb-2">100%</div>
-                    <div class="text-blue-100">Digital Adoption</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
+    <section id="services" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Our Expertise</h2>
-                <p class="text-slate-500">Comprehensive consulting services tailored for the African landscape.</p>
+                <h2 class="text-4xl font-bold">Our Solutions</h2>
+                <div class="h-1 w-20 bg-blue-600 mx-auto mt-4"></div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:shadow-2xl transition group" data-aos="fade-up">
-                    <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-graduation-cap text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Education Consulting</h3>
-                    <p class="text-slate-600 leading-relaxed">Modernizing curriculum delivery through LMS integration and teacher digital literacy programs.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-300 transition-all group">
+                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_u8o7ocfs.json" 
+                        background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay>
+                    </lottie-player>
+                    <h3 class="text-2xl font-bold mt-6">Edu Consulting</h3>
+                    <p class="mt-4 text-slate-500">Transforming curriculum delivery through digital-first strategies.</p>
                 </div>
-
-                <div class="p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:shadow-2xl transition group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-purple-600 text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-cloud text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Cloud Infrastructure</h3>
-                    <p class="text-slate-600 leading-relaxed">Scalable cloud hosting and migration strategies for growing businesses and schools.</p>
+                <div class="p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-300 transition-all">
+                    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_w51pcehl.json" 
+                        background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay>
+                    </lottie-player>
+                    <h3 class="text-2xl font-bold mt-6">Cloud Strategy</h3>
+                    <p class="mt-4 text-slate-500">Secure, scalable, and cost-effective cloud infrastructure for schools.</p>
                 </div>
-
-                <div class="p-8 rounded-3xl border border-slate-100 bg-slate-50 hover:shadow-2xl transition group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-emerald-600 text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-microchip text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">IT Strategy</h3>
-                    <p class="text-slate-600 leading-relaxed">Strategic roadmap planning to align your technology investments with your organizational goals.</p>
+                <div class="p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-300 transition-all">
+                    <lottie-player src="https://assets3.lottiefiles.com/private_files/lf30_8npirptd.json" 
+                        background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay>
+                    </lottie-player>
+                    <h3 class="text-2xl font-bold mt-6">Tech Support</h3>
+                    <p class="mt-4 text-slate-500">24/7 proactive maintenance and dedicated consulting support.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 bg-slate-900 text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 relative z-10">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl font-bold mb-6">Let's build the <br><span class="text-blue-400">future together.</span></h2>
-                    <p class="text-slate-400 mb-8 text-lg">Ready to transform your institution? Our experts are standing by to provide a consultation.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-blue-400">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <span class="text-xl">info@terrac.co.za</span>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-blue-400">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <span class="text-xl">South Africa | Global</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl text-slate-900">
-                    <form action="#" class="space-y-4">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-semibold mb-1">Name</label>
-                                <input type="text" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold mb-1">Company</label>
-                                <input type="text" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-1">Email</label>
-                            <input type="email" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-1">Message</label>
-                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
-                        </div>
-                        <button class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition">Send Message</button>
-                    </form>
-                </div>
+    <footer id="contact" class="bg-slate-900 text-white py-20 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Ready to evolve?</h2>
+            <p class="text-slate-400 mb-12">Contact us at <span class="text-white">info@terrac.co.za</span> or via WhatsApp below.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://wa.me/27825377627" class="text-4xl hover:text-green-400 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="text-4xl hover:text-blue-400 transition"><i class="fa-brands fa-linkedin"></i></a>
             </div>
-        </div>
-    </section>
-
-    <footer class="py-12 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-slate-500">&copy; 2024 Terracloud Africa. All rights reserved.</p>
+            <p class="mt-16 text-slate-600 text-sm">&copy; 2024 Terracloud Africa. Built for the Future.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/YOUR_NUMBER_HERE" target="_blank" class="fixed bottom-6 left-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl hover:scale-110 transition-transform">
-        <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/27825377627" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-[100]">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
-    <div class="fixed bottom-6 right-6 z-50">
-        <button @click="chatOpen = !chatOpen" class="bg-blue-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-xl shadow-xl hover:bg-blue-700 transition">
-            <i class="fa-solid" :class="chatOpen ? 'fa-xmark' : 'fa-comment-dots'"></i>
-        </button>
-
-        <div x-show="chatOpen" x-transition class="absolute bottom-20 right-0 w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
-            <div class="bg-blue-600 p-4 text-white font-bold flex items-center justify-between">
-                <span>Terracloud Support</span>
-            </div>
-            <div class="h-64 p-4 overflow-y-auto bg-slate-50 text-sm">
-                <div class="bg-white p-3 rounded-lg mb-2 shadow-sm border border-slate-100">
-                    Hello! How can we help you with your technology or education consulting needs today?
-                </div>
-            </div>
-            <div class="p-3 border-t">
-                <input type="text" placeholder="Type a message..." class="w-full px-3 py-2 rounded-lg bg-slate-100 border-none focus:ring-2 focus:ring-blue-500 outline-none text-sm">
-            </div>
-        </div>
-    </div>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            easing: 'ease-out-quad'
-        });
-    </script>
 </body>
 </html>
